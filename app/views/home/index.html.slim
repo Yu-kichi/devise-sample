@@ -1,2 +1,14 @@
 h1 Home#index
-p Find me in app/views/home/index.html.slim
+p TOPページ
+
+- if current_user
+  | ログイン中です
+  = @user.name
+  br 
+  = link_to 'ログアウト', destroy_user_session_path, method: :delete
+- else
+  | ログインしていません
+  br
+  = link_to 'ログイン', new_user_session_path
+  br
+  = link_to 'サインイン', new_user_registration_path
