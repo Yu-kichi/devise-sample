@@ -5,6 +5,8 @@ p TOPページ
   | ログイン中です
   = @user.name
   br 
+  = link_to 'ユーザー情報変更', edit_user_registration_path
+  br
   = link_to 'ログアウト', destroy_user_session_path, method: :delete
 - else
   | ログインしていません
